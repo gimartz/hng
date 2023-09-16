@@ -1,28 +1,29 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { faFacebook,faTwitter,faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   const data = [
     {
-      icon: "faFacebook",
+      icon: ` ${faFacebook}`,
       name: "Facebook",
       link: "https://facebook.com",
       id: 1,
     },
     {
-      icon: "faTwitter",
+      icon:` ${faTwitter}`,
       name: "Twitter",
       link: "https://twitter.com",
       id: 2,
     },
     {
-      icon: "faInstagram",
+      icon: `${faInstagram}`,
       name: "Instagram",
-      link: "https://istagram.com",
+      link: "https://instagram.com",
       id: 3,
     },
     {
-      icon: "faYoutube",
+      icon: ` ${faYoutube}`,
       name: "Youtube",
       link: "https://youtube.com",
       id: 4,
@@ -42,7 +43,7 @@ const Footer = () => {
                       className="col-sm-2 col-md-2 btn btn-dark"
                       key={Val.id}
                     >
-                      <FontAwesomeIcon  size="lg" icon={Val.icon} />
+                      <FontAwesomeIcon  size="lg" />
                       <br />
                       <h5 className="pt-1 fs-6">{Val.name}</h5>
                     </button>
@@ -51,7 +52,7 @@ const Footer = () => {
               );
             })}
             <div className="text-white footer1">
-             ©2023  By: Chukwudalu nonye
+             ©2023  By: Chukwuka nonye
             </div>
           </div>
         </div>

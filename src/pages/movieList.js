@@ -6,11 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, NavLink } from 'react-router-dom'
 import noimage from './movies.jpg'
 import Menu from './menu'
-
+import Star from '../Page/Star.png'
 export const Filmdetails = ({media}) => {
    const { id } = useParams()
-     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
 const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
   const [moviedet, setMoviedet] = useState([]);
   const [castdata, setCastdata] = useState([]);
@@ -18,65 +16,33 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
   const [video, setVideo] = useState([]);
 
   const fetchMovie = async () => {
-        try {
-                setLoading(true);
     const data = await fetch(
       `https://api.themoviedb.org/3/${media}/${id}?api_key=${APIKEY}&language=en-US`
     );
     const moviedetail = await data.json();
-    
     setMoviedet(moviedetail);
     // console.log(moviedetail);
     setMoviegenres(moviedetail.genres);
-        setError(false);
-                setLoading(false);
-            } catch (err) {
-                console.log(err);
-
-                setLoading(false);
-                setError(true);
-            }
    
   };
 
   const fetchCast = async () => {
-        try {
-                setLoading(true);
     const castdata = await fetch(
       `https://api.themoviedb.org/3/${media}/${id}/credits?api_key=${APIKEY}&language`
     );
     const castdetail = await castdata.json();
     setCastdata(castdetail.cast);
-    setError(false);
-                setLoading(false);
-            } catch (err) {
-                console.log(err);
-
-                setLoading(false);
-                setError(true);
-            }
+   
   }
 
   const fetchVideo = async () => {
-    try {
-                setLoading(true);
     const data = await fetch(
       `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=${APIKEY}&language=en-US`
     );
     const videodata = await data.json();
-    const arr = videodata.results;
-    const filtered =  arr.filter((val,i)=>i<1)
-    setVideo(filtered);
+    setVideo(videodata.results);
     // console.log(videodata.results);
-     setError(false);
-                setLoading(false);
-            } catch (err) {
-                console.log(err);
-
-                setLoading(false);
-                setError(true);
-            }
-  };
+  }
 
   useEffect(() => {
     fetchMovie();
@@ -88,14 +54,7 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
   
 
   return (
-    <>
-{loading ? (
-      <div className="t-20 text-center load">
-       <div class="spinner-border" role="status">
- </div>
-  <span class="sr-only">Loading...</span>
- </div>
-      ) :
+
     <div className=''>
      <Menu />
           <div className='cont'>
@@ -115,9 +74,17 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
          <div className='movieTitle'>
    
       {moviedet?.title || moviedet?.name || moviedet?.original_name}
+      <div className='flex justify-center d-flex flex-row g-2'>
+              {moviegenres.map((tag) => (
+                <>
+                  <div key={tag.id} className='text-black button '>{tag.name}</div>
+                 </>
+              ))}
+            </div>
     </div>
+        
      <div className='movieRatings'>
-      
+      <img src={Star} width={30} height={30} />{moviedet?.vote_average}
     </div>
         <div className='movieDesc'>
       {moviedet.overview}
@@ -134,15 +101,25 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
       <p className='castmembers'> Directors:</p>
       <p className='castmembers'>Writers:</p>
       <p className='castmembers'>Stars:</p>
+        <div className="md:px-5 d-flex flex-column my-5 ">
+                {castdata.map((cast) => (
+                  <>
+                    {cast.profile_path !== null ? <>
+                      <div className=''>
+                        <p className='text-black'>{cast.name}</p>
+                      
+                      </div>
+                    </> : null}
+                  </>
+                ))}
+              </div>
     </div>
      <div className='movieRelated'>
       
     </div>
     </div>
     </div> </div>
- }
-    </>
-  );
+  )
 }
 
 export default Filmdetails

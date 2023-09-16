@@ -109,7 +109,7 @@ export const Detail = () => {
             </div>
 
             {/* trailer */}
-            <div className='flex justify-center items-center mb-10 gap-5 flex-wrap'>
+            <div className='d-flex flex-row justify-center mb-10 gap-5 '>
               {Array.from(video).filter(trail => trail.type === "Trailer").map((trail, index) => (
                 <>
                     <>

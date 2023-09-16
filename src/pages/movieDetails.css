@@ -10,6 +10,15 @@
 .cont{
     margin-left: 263px;
 }
+.movieRatings{display: flex;justify-content: center;
+vertical-align: bottom;margin-top: 20px;font-size: 22px;
+}
+.button{
+border-radius: 15px;
+    border: 1px solid #F8E7EB;width: 84px;align-items: center;justify-content: center;
+        height: 30px;font-size: 15px;color: #B91C1C;
+            font-family: Poppins;display: flex;
+}
 .moviePosters{ 
     border-radius: 20px;width: 1198px;
         height: 449px;
@@ -28,7 +37,11 @@
             flex-shrink: 0; align-self: center;justify-items: center;
 }
 .movieTitle{
-    margin-top:31px; display: flex;flex-direction: column;
+    margin-top:31px; display: flex;flex-direction: column;color: #404040;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 500;
 }
 .seeTimes{
     width: 360px;

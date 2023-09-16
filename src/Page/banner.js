@@ -52,7 +52,10 @@ function truncate(string, n){
        <div style={{ backgroundImage:`url("https://image.tmdb.org/t/p/original/${movies?.backdrop_path}")`, backgroundPosition: "center center", backgroundRepeat:"no-repeat",backgroundSize:"cover"}} className="jumbotron jumbotron-fluid moviePoster ">
             <div class="d-flex flex-row justify-content-between p-16 ">
   <div class="p-2"><img src={logo} alt="n"  className="d-inline p-2 "/></div>
-  <div className="p-2 text-white search"><input type='text' onChange={handleSearch } placeholder={'What do want to watch?'} className="inputSearch text-white"/> <FontAwesomeIcon icon={faSearch} /></div>
+  
+  <div className="p-2 text-white search"><input type='text' onChange={handleSearch } placeholder={'What do want to watch?'} className="flex h-10 rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus:ring-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pr-12 text-white w-full inputSearch text-white"/>
+  <span class="absolute inset-y-0 right-0 flex items-center pr-1"><svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 1024 1024" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg"><path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"></path></svg></span>
+  </div>
   <div className="p-2 d-inline-flex align-items-center"><a href="#" style={{ textDecoration:"none",color:"white",padding:"16px"}}>Sign in </a><span className="l-12"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
 <circle cx="18" cy="18" r="18" fill="#BE123C"/>
 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
