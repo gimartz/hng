@@ -5,7 +5,7 @@ import './movieDetails.css';import { faCirclePlay, faTicket,faListUl} from "@for
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, NavLink } from 'react-router-dom'
 import noimage from '../assets/movies.jpg'
-import { formatRuntime, convertToUTC } from '../Components/utils';
+
 import Menu from './menu'
 import Star from '../assets/Star.png'
 export const Filmdetails = ({media}) => {
@@ -15,7 +15,16 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
   const [castdata, setCastdata] = useState([]);
   const [moviegenres, setMoviegenres] = useState([]);
   const [video, setVideo] = useState([]);
+function toHoursAndMinutes(totalMinutes) {
+  const minute = totalMinutes % 60;
+  const hours = Math.floor(totalMinutes / 60);
 
+  return `${padTo2Digits(hours)}hr ${padTo2Digits(minute)}min`;
+}
+
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
   const fetchMovie = async () => {
     const data = await fetch(
       `https://api.themoviedb.org/3/${media}/${id}?api_key=${APIKEY}&language=en-US`
@@ -74,7 +83,7 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
     <div class="grid-container">
          <div className='movieTitle'data-testid="movie-card">
    
-      {moviedet?.title || moviedet?.name || moviedet?.original_name} <p data-testid="movie-runtime">{formatRuntime(Number(moviedet?.runtime))}</p>
+      {moviedet?.title || moviedet?.name || moviedet?.original_name} <p data-testid="movie-runtime">{ toHoursAndMinutes(moviedet?.runtime)}</p>
       <div className='flex justify-center d-flex flex-row g-2'>
               {moviegenres.map((tag) => (
                 <>
