@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
  import { NavLink } from "react-router-dom";
 import { img_300, unavailable } from "../Components/config";
 // import { AppProvider } from "../Components/context";
-import imdb from './imd.png';import favorties from'./Heart.png';
-import tomato from './tomato.png';import Banner from './banner';
+import imdb from '../assets/imd.png';import favorties from'../assets/Heart.png';
+import tomato from '../assets/tomato.png';import Banner from './banner';
 import Pagination from "../Components/Pagination";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Trending.css'
@@ -87,7 +87,7 @@ const useSemiPersistentState = (key, initialState) => {
 
             return (
               <>
-                <div
+                <div data-testid="movie-card"
                   key={id}
                   className="col-md-3 col-sm-4 py-3 d-flex justify-content-left g-4"
                   id="card"
@@ -98,7 +98,7 @@ const useSemiPersistentState = (key, initialState) => {
                     style={{ color: "white", textDecoration: "none" }}
                   > */}
                   <div><NavLink to={`/movie-detail/${id}`} >
-                    <img width={260}
+                    <img width={260} data-testid="movie-poster"
                       src={
                         poster_path ? `${img_300}/${poster_path}` : unavailable
                       }
@@ -107,11 +107,28 @@ const useSemiPersistentState = (key, initialState) => {
                     /></NavLink>
                      <div className="d-flex flex-md-row justify-content-between ">
                     <div className="movieType border-10 text-center">{media_type === "tv" ? "TV SERIES" : "Movie"}</div>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+ 
                     <div className="movieFav border-10 text-center"><img alt='favorites' src={favorties}/></div>
+                   </button>
                     </div>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Added to favourites</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+  
+    </div>
+  </div>
+</div>
                     <div className="card-body">
-                      <div className="d-flex flex-column align-self-start text-gray" >{new Date(first_air_date).getFullYear() || new Date(release_date).getFullYear()}</div>
-                     <NavLink to={`/${media_type}-detail/${id}`} style={{textDecoration:"none",color:"black"}}> <h5 className="card-title fs-5 align-items-left">
+                      <div data-testid="movie-release-date" className="d-flex flex-column align-self-start text-gray" >{new Date(first_air_date).getFullYear() || new Date(release_date).getFullYear()}</div>
+                     <NavLink to={`/${media_type}-detail/${id}`} style={{textDecoration:"none",color:"black"}}> <h5 data-testid="movie-title" className="card-title fs-5 align-items-left">
                         {title || name}
                       </h5></NavLink>
                       <div className="d-flex flex-md-row justify-content-between ">

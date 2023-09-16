@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import logo from './Logo.png';import './Trending.css'
+import logo from '../assets/Logo.png';import './Trending.css'
 import axios from 'axios';
 import requests from "./axios";
-import imdb from './imd.png';
-import tomato from './tomato.png';
+import imdb from '../assets/imd.png';
+import tomato from '../assets/tomato.png';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

@@ -5,7 +5,7 @@
         .movieFav {
             border-radius: 30px;
             Width: 30px;
-            
+cursor: pointer;
             margin-top: -510px;
             margin-bottom: 500px;
            background: rgba(243, 244, 246, 0.50);

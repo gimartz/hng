@@ -1,5 +1,5 @@
 import React from 'react'
-import './menu.css';import logo from './Logo.png';
+import './menu.css';import logo from '../assets/Logo.png';
 import { faHome, faVideo,faTelevision,faTrailer,faLogout} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function menu() {

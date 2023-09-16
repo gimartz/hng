@@ -113,7 +113,7 @@ export const Detail = () => {
               {Array.from(video).filter(trail => trail.type === "Trailer").map((trail, index) => (
                 <>
                     <>
-                      <a key={trail.id} href={'https://www.youtube.com/watch?v=' + trail.key} target="_blank" className='flex border-2 border-red-600 bg-red-600/40 p-3 items-center justify-center gap-2 text-xl font-semibold rounded-full text-white'>
+                      <a key={trail.id} href={'https://www.youtube.com/watch?v=' + trail.key} target="_blank" className='flex border-2 border-red-600  rounded-full text-white'>
                         <FaPlay />Watch trailer {Array.from(video).filter(trail => trail.type === "Trailer").length>1?index+1:""}
                       </a>
                     </>

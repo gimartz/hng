@@ -4,9 +4,10 @@ import { useEffect, useState, useContext }  from 'react'
 import './movieDetails.css';import { faCirclePlay, faTicket,faListUl} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, NavLink } from 'react-router-dom'
-import noimage from './movies.jpg'
+import noimage from '../assets/movies.jpg'
+import { formatRuntime, convertToUTC } from '../Components/utils';
 import Menu from './menu'
-import Star from '../Page/Star.png'
+import Star from '../assets/Star.png'
 export const Filmdetails = ({media}) => {
    const { id } = useParams()
 const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
@@ -71,9 +72,9 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
 </div>
        
     <div class="grid-container">
-         <div className='movieTitle'>
+         <div className='movieTitle'data-testid="movie-card">
    
-      {moviedet?.title || moviedet?.name || moviedet?.original_name}
+      {moviedet?.title || moviedet?.name || moviedet?.original_name} <p data-testid="movie-runtime">{formatRuntime(Number(moviedet?.runtime))}</p>
       <div className='flex justify-center d-flex flex-row g-2'>
               {moviegenres.map((tag) => (
                 <>
@@ -86,7 +87,7 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
      <div className='movieRatings'>
       <img src={Star} width={30} height={30} />{moviedet?.vote_average}
     </div>
-        <div className='movieDesc'>
+        <div className='movieDesc'data-testid="movie-overview">
       {moviedet.overview}
     </div>
      <div className='movieShowtimes'>
