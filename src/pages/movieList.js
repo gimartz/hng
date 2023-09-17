@@ -41,7 +41,9 @@ function padTo2Digits(num) {
       `https://api.themoviedb.org/3/${media}/${id}/credits?api_key=${APIKEY}&language`
     );
     const castdetail = await castdata.json();
-    setCastdata(castdetail.cast);
+      let newArray=castdetail.cast
+         const task = newArray.map(r=>r.split(/(?=[A-Z])/).join(" "));
+    setCastdata(task);
    
   }
 
@@ -110,19 +112,8 @@ function padTo2Digits(num) {
      <div className='movieCast'>
       <p className='castmembers'> Directors:</p>
       <p className='castmembers'>Writers:</p>
-      <p className='castmembers'>Stars:</p>
-        <div className="md:px-5 d-flex flex-column my-5 ">
-                {castdata.map((cast) => (
-                  <>
-                    {cast.profile_path !== null ? <>
-                      <div className=''>
-                        <p className='text-black'>{cast.name}</p>
-                      
-                      </div>
-                    </> : null}
-                  </>
-                ))}
-              </div>
+      <p className='castmembers'>Stars:{castdata}</p>
+      
     </div>
      <div className='movieRelated'>
       
