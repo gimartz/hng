@@ -204,13 +204,7 @@ const getAsyncStories = () =>
                       className="card-img-top pt-3 pb-0 px-0"
                       alt={title}
                     /></NavLink>
-                     <div className="d-flex flex-md-row justify-content-between ">
-                    <div className="movieType border-10 text-center">{media_type === "tv" ? "TV SERIES" : "Movie"}</div>
-                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
- 
-                    <div className="movieFav border-10 text-center"><img alt='favorites' src={favorties}/></div>
-                   </button>
-                    </div>
+                   
                <div className="card-body">
                       <div data-testid="movie-release-date" className="d-flex flex-column align-self-start text-gray" >{new Date(first_air_date).getFullYear() || new Date(release_date).getFullYear()}</div>
                      <NavLink to={`/movie-detail/${id}`} style={{textDecoration:"none",color:"black"}}> <h5 data-testid="movie-title" className="card-title fs-5 align-items-left">
@@ -233,7 +227,7 @@ const getAsyncStories = () =>
             );
           })}
           <Pagination page={page} setPage={setPage} />
-             <div className="overlap-group">
+           
           
         <footer className="footer footer1">
           <img
@@ -248,7 +242,7 @@ const getAsyncStories = () =>
           </div>
           <p className="text-wrapper-12">© 2023 MovieBox by Chukwudalu Nonyelim</p>
         </footer>
-      </div>
+   
           </div>
       
     </div>  </div>  </div>}
