@@ -1,6 +1,6 @@
  :root{
     background-color: #ffffff;
-    display: flex;
+    display: flex;overflow-x: hidden;
     flex-direction: row;scroll-behavior: smooth;
     justify-content: center;
     width: 100%;
@@ -439,8 +439,8 @@ background-color: #BE123C;
     flex-direction: column;
     gap: 36px;
    
-    position: fixed;
-   bottom: 0;
+    position: relative;
+   margin-top:700px;
 }
 
  .social {
@@ -516,7 +516,7 @@ background-color: #BE123C;
   }
   .footer1 {
     font-size: 14px;
-    bottom: auto;
+    bottom: inherit;
   }
 }
 .movie-card {
