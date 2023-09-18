@@ -48,6 +48,7 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
       `https://api.themoviedb.org/3/${media}/${id}/credits?api_key=${APIKEY}&language`
     );
     const castdetail = await castdata.json();
+<<<<<<< HEAD
   
   
     setCastdata(castdetail.cast);
@@ -60,6 +61,12 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
                 setLoading(false);
                 setError(true);
             }
+=======
+      let newArray=castdetail.cast
+         const task = newArray.map(r=>r.split(/(?=[A-Z])/).join(" "));
+    setCastdata(task);
+   
+>>>>>>> ff070be76ef1fd92ec611ddfc67b18b44bddfa50
   }
 
   const fetchVideo = async () => {
@@ -156,6 +163,7 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
         <p className='seeTimeText'><FontAwesomeIcon icon={faListUl} style={{marginTop:"5px",verticalAlign:"middle"}}/>&nbsp;More Watch options</p>
       </div>
     </div>
+<<<<<<< HEAD
      <div className='d-flex flex-row 'style={{marginTop:'-51px'}}><div className="group-5"><p className="stars-tom-cruise">
       <p className='castmembers text-wrapper-11'>Stars:
        
@@ -179,6 +187,13 @@ const APIKEY ='3d820eab8fd533d2fd7e1514e86292ea';
   
        </div> 
      
+=======
+     <div className='movieCast'>
+      <p className='castmembers'> Directors:</p>
+      <p className='castmembers'>Writers:</p>
+      <p className='castmembers'>Stars:{castdata}</p>
+      
+>>>>>>> ff070be76ef1fd92ec611ddfc67b18b44bddfa50
     </div>
      <div className='movieRelated'>
       
