@@ -1,23 +1,25 @@
-:root{
+:root{width: 100%;
    
         box-sizing: border-box;
         color: #333;
-            font-family: Poppins;line-height: normal;
+            font-family: 'Poppins';line-height: normal;
 }
+ @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 *a{
     text-decoration: none;
 }
 .cont{
     margin-left: 263px;
 }
-.movieRatings{display: flex;justify-content: center;
+.movieRatings{display: flex;justify-content: center;font-family: 'Poppins';
 vertical-align: bottom;margin-top: 20px;font-size: 22px;
 }
 .button{
-border-radius: 15px;
-    border: 1px solid #F8E7EB;width: 84px;align-items: center;justify-content: center;
+border: 1px solid;
+    border-color: #f8e7eb;width: 84px;margin-left: 32px;
+    border-radius: 15px;align-items: center;justify-content: center;
         height: 30px;font-size: 15px;color: #B91C1C;
-            font-family: Poppins;display: flex;
+            font-family: 'Poppins';display: flex;margin-top: 23px;
 }
 .moviePosters{ 
     border-radius: 20px;width: 1198px;
@@ -38,7 +40,7 @@ border-radius: 15px;
 }
 .movieTitle{
     margin-top:31px; display: flex;flex-direction: column;color: #404040;
-        font-family: Poppins;
+        font-family: 'Poppins';
         font-size: 23px;
         font-style: normal;
         font-weight: 500;
@@ -47,6 +49,9 @@ border-radius: 15px;
     width: 360px;
         height: 55px;border-radius: 10px;
             background: #BE123C;margin-top: -10px;
+}
+.castmembers{
+    font-family: 'Poppins';
 }
 .seeTime {
     width: 360px;
@@ -57,10 +62,10 @@ border-radius: 15px;
         background: rgba(190, 18, 60, 0.10);
     margin-top: 12px;
 }
-.seeTimeText{
+.seeTimeText{font-family: 'Poppins';
     color:black;padding-top: 13px; justify-content: center;display: flex;vertical-align: middle;
 }
-.seeTimesText{
+.seeTimesText{font-family: 'Poppins';
     color:white;padding-top: 13px;justify-content: center;display: flex;vertical-align: middle;
 }
 .grid-container {
