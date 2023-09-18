@@ -35,7 +35,7 @@ const MovieCard = ({
         </div>
       </div>
       <h3 data-testid="movie-release-date"  className="text-wrapper-2">{text1}</h3>
-      <div className="stranger-things">{text2}</div>
+      <div data-testid="movie-title" className="stranger-things">{text2}</div>
       <div className="rating-2">
         <div className="div-2">
           <img

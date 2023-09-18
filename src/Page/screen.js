@@ -164,9 +164,9 @@ const getAsyncStories = () =>
             <div className="rectangle" />
           </div>
         </header>
-        <div className="featured-movie a" style={{alignItems:'left',}}>
-          <div className="title d-flex flex-row justify-content-between">
-            <div className="text-wrapper-9 ">Featured Movie</div>
+        <div className="featured-movie ">
+          <div className="featured-title ">
+            <div className="feat-text-wrapper-9 ">Featured Movie</div>
             <div className="see-more">
               <div className="text-wrapper-10" style={{color:'red'}}>See more</div>
            

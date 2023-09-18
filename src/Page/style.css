@@ -297,24 +297,24 @@ background-color: #BE123C;
     width: 1308px;
 }
 
- .title {
+ .featured-title {
     align-items: center;
     display: flex;
     justify-content: space-between;
     left: 64px;
     position: absolute;
     top: 0;
-    width: 1244px;
+    width: 1044px;
 }
 
- .text-wrapper-9 {
+ .feat-text-wrapper-9 {
     color: #000000;
     font-family: "DM Sans", Helvetica;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 0;
     line-height: normal;
-    margin-top: -1px;
+    margin-top: 11px;
     position: relative;
     width: fit-content;
 }
@@ -334,7 +334,7 @@ background-color: #BE123C;
     font-weight: 400;
     letter-spacing: 0;
     line-height: 24px;
-    margin-top: -1px;
+    margin-top: -10px;
     position: relative;
     white-space: nowrap;
     width: fit-content;
@@ -440,7 +440,7 @@ background-color: #BE123C;
     gap: 36px;
    
     position: relative;
-   margin-top:700px;
+   margin-top:600px;
 }
 
  .social {
